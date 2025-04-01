@@ -16,8 +16,7 @@ public class TextBoxPage {
             outputName = $("#output #name"),
             outputEmail = $("#output #email"),
             outputCurrentAddress = $("#output #currentAddress"),
-            outputPermanentAddress = $("#output #permanentAddress")
-                    ;
+            outputPermanentAddress = $("#output #permanentAddress");
 
     public TextBoxPage openPage(){
 
