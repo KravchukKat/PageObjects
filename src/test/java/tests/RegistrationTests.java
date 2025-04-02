@@ -35,8 +35,8 @@ public class RegistrationTests {
 //        registrationPage.setLastName()
         $("#userEmail").setValue("alex@egorov.com");
 //        registrationPage.setUserEmail()
-        $("#genderWrapper").$(byText("Other")).click();
-//        registrationPage.setGender()
+        $("#genterWrapper").$(byText("Other")).click();
+//        registrationPage.setGenter()
         $("#userNumber").setValue("8922775126");
 //        registrationPage.setUserNumber()
         $("#dateOfBirthInput").click();

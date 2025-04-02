@@ -13,7 +13,7 @@ public class RegistrationPage {
     private SelenideElement firstNameInput = $("#firstName"),
                   lastNameInput = $("#lastName"),
                   userEmailInput = $("#userEmail"),
-                  genderWrapper = $("#genderWrapper"),
+                  genterWrapper = $("#genterWrapper"),
                   userNumberInput = $("#userNumber"),
                   calendarInput = $("#dateOfBirthInput"),
                   subjectsInput = $("#subjectsInput"),
@@ -56,8 +56,8 @@ public class RegistrationPage {
 
         return this;
     }
-    public RegistrationPage setGender(String value) {
-        genderWrapper.$(byText(value)).click();
+    public RegistrationPage setGenter(String value) {
+        genterWrapper.$(byText(value)).click();
 
         return this;
     }

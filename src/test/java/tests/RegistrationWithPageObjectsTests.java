@@ -1,13 +1,7 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationWithPageObjectsTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
@@ -19,7 +13,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                         .setFirstName("Alex")
                         .setLastName("Egorov")
                         .setUserEmail("alex@egorov.com")
-                        .setGender("Other")
+                        .setGenter("Other")
                         .setUserNumber("8922775126")
                         .setBirthDay("20", "January", "1990")
                         .setSubjects("Math")
@@ -50,7 +44,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setFirstName("Ekaterina")
                 .setLastName("Ivanova")
                 .setUserEmail("ivanova@mail.com")
-                .setGender("Male")
+                .setGenter("Male")
                 .setUserNumber("8123456789")
                 .setBirthDay("08", "March", "2000")
                 .setHobbies("Reading")
@@ -67,7 +61,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     }
 
     @Test
-    void UnsuccessfulRegistrationWithoutRequiredFieldsTest() {
+    void unsuccessfulRegistrationWithoutRequiredFieldsTest() {
 
         registrationPage.openPage()
                 .removeBanners()
