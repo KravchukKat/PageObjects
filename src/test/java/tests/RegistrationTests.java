@@ -17,8 +17,9 @@ public class RegistrationTests {
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000; // default 4000
     }
+
     @AfterEach
-    void afterEach () {
+    void afterEach() {
         closeWebDriver();
     }
 

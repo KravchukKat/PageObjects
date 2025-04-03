@@ -2,7 +2,8 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
-public class TextBoxWithPageObjectsTests extends TestBase{
+
+public class TextBoxWithPageObjectsTests extends TestBase {
 
     TextBoxPage textBoxPage = new TextBoxPage();
 

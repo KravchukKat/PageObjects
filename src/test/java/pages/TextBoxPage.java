@@ -18,70 +18,70 @@ public class TextBoxPage {
             outputCurrentAddress = $("#output #currentAddress"),
             outputPermanentAddress = $("#output #permanentAddress");
 
-    public TextBoxPage openPage(){
+    public TextBoxPage openPage() {
 
         open("/text-box");
 
         return this;
     }
 
-    public TextBoxPage setUserName(String value){
+    public TextBoxPage setUserName(String value) {
 
         userNameInput.setValue(value);
 
         return this;
     }
 
-    public TextBoxPage setEmailName(String value){
+    public TextBoxPage setEmailName(String value) {
 
         userEmailInput.setValue(value);
 
         return this;
     }
 
-    public TextBoxPage setCurrentAddress(String value){
+    public TextBoxPage setCurrentAddress(String value) {
 
         currentAddressInput.setValue(value);
 
         return this;
     }
 
-    public TextBoxPage setPermanentAddress(String value){
+    public TextBoxPage setPermanentAddress(String value) {
 
         permanentAddressInput.setValue(value);
 
         return this;
     }
 
-    public TextBoxPage submit(){
+    public TextBoxPage submit() {
 
         submit.click();
 
         return this;
     }
 
-    public TextBoxPage checkNameResultValue(String value){
+    public TextBoxPage checkNameResultValue(String value) {
 
         outputName.shouldHave(text(value));
 
         return this;
     }
 
-    public TextBoxPage checkEmailResultValue(String value){
+    public TextBoxPage checkEmailResultValue(String value) {
 
         outputEmail.shouldHave(text(value));
 
         return this;
     }
 
-    public TextBoxPage checkCurrentAddressResultValue(String value){
+    public TextBoxPage checkCurrentAddressResultValue(String value) {
 
         outputCurrentAddress.shouldHave(text(value));
 
         return this;
     }
 
-    public TextBoxPage checkPermanentAddressResultValue(String value){
+    public TextBoxPage checkPermanentAddressResultValue(String value) {
 
         outputPermanentAddress.shouldHave(text(value));
 

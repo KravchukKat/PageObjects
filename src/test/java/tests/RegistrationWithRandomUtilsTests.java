@@ -38,39 +38,39 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
                 .checkResultValue("State and City", state + " " + city);
     }
 
-@Test
-void successRegistrationRequiredFieldsTest() {
+    @Test
+    void successRegistrationRequiredFieldsTest() {
 
-    registrationPage.openPage()
-            .removeBanners()
-            .setFirstName(firstName)
-            .setLastName(lastName)
-            .setUserEmail(userEmail)
-            .setGenter(genter)
-            .setUserNumber(userNumber)
-            .setBirthDay(day, month, year)
-            .setHobbies(hobbies)
-            .setAddress(address)
-            .submit()
-            .checkFormAppears()
-            .checkResultValue("Student Name", firstName + " " + lastName)
-            .checkResultValue("Student Email", userEmail)
-            .checkResultValue("Gender", genter)
-            .checkResultValue("Mobile", userNumber)
-            .checkResultValue("Date of Birth", day + month + year)
-            .checkResultValue("Hobbies", hobbies)
-            .checkResultValue("Address", address);
-}
+        registrationPage.openPage()
+                .removeBanners()
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(userEmail)
+                .setGenter(genter)
+                .setUserNumber(userNumber)
+                .setBirthDay(day, month, year)
+                .setHobbies(hobbies)
+                .setAddress(address)
+                .submit()
+                .checkFormAppears()
+                .checkResultValue("Student Name", firstName + " " + lastName)
+                .checkResultValue("Student Email", userEmail)
+                .checkResultValue("Gender", genter)
+                .checkResultValue("Mobile", userNumber)
+                .checkResultValue("Date of Birth", day + month + year)
+                .checkResultValue("Hobbies", hobbies)
+                .checkResultValue("Address", address);
+    }
 
-@Test
-void unsuccessfulRegistrationWithoutRequiredFieldsTest() {
+    @Test
+    void unsuccessfulRegistrationWithoutRequiredFieldsTest() {
 
-    registrationPage.openPage()
-            .removeBanners()
-            .setFirstName(firstName)
-            .setLastName(lastName)
-            .submit()
-            .checkFormNotAppears();
-}
+        registrationPage.openPage()
+                .removeBanners()
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .submit()
+                .checkFormNotAppears();
+    }
 }
 

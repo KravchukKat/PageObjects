@@ -52,10 +52,10 @@ public class RandomUtils {
     public static String getRandomDateOfBirthMonth() {
 
         Date fakerDateOfBirth = faker.date().birthday();
-        SimpleDateFormat formatMounth = new SimpleDateFormat("MMMMM", Locale.ENGLISH);
-        String mouth = formatMounth.format(fakerDateOfBirth);
+        SimpleDateFormat formatMonth = new SimpleDateFormat("MMMMM", Locale.ENGLISH);
+        String month = formatMonth.format(fakerDateOfBirth);
 
-        return mouth;
+        return month;
 
     }
 
@@ -72,51 +72,53 @@ public class RandomUtils {
     public static String getRandomGenter() {
         String[] genter = {"Male", "Female", "Other"};
 
-        return getRandomItemFromArray(genter);
+        return faker.options().option("Male", "Female", "Other");
     }
+
 
     public static String getRandomHobbies() {
         String[] hobbies = {"Sports", "Reading", "Music"};
 
-        return getRandomItemFromArray(hobbies);
+        return faker.options().option("Sports", "Reading", "Music");
     }
 
     public static String getRandomSubjects() {
         String[] subjects = {"Maths", "Accounting", "Arts", "Social Studies"};
 
-        return getRandomItemFromArray(subjects);
+        return faker.options().option("Maths", "Accounting", "Arts", "Social Studies");
     }
 
     public static String getRandomState() {
         String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
 
-        return getRandomItemFromArray(state);
+        return faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
     }
 
     public static String getRandomCity(String state) {
+
         if (state.equals("NCR")) {
 
             String[] city = {"Delhi", "Gurgaon", "Noida"};
 
-            return getRandomItemFromArray(city);
-        }
-        if (state.equals("Uttar Pradesh")) {
+            return faker.options().option("Delhi", "Gurgaon", "Noida");
+
+        } else if (state.equals("Uttar Pradesh")) {
 
             String[] city = {"Agra", "Lucknow", "Merrut"};
 
-            return getRandomItemFromArray(city);
-        }
-        if (state.equals("Haryana")) {
+            return faker.options().option("Agra", "Lucknow", "Merrut");
+
+        } else if (state.equals("Haryana")) {
 
             String[] city = {"Karnal", "Panipat"};
 
-            return getRandomItemFromArray(city);
-        }
-        else {
+            return faker.options().option("Karnal", "Panipat");
+
+        } else {
 
             String[] city = {"Jaipur", "Jaiselmer"};
 
-            return getRandomItemFromArray(city);
+            return faker.options().option("Jaipur", "Jaiselmer");
         }
     }
 
@@ -127,3 +129,4 @@ public class RandomUtils {
     }
 
 }
+
