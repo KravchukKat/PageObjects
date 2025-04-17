@@ -1,14 +1,18 @@
 package tests;
 
-import org.junit.jupiter.api.Tag;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
+
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationWithPageObjectsTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    @Tag("demoqa")
     void successfulRegistrationTest() {
         registrationPage.openPage()
                 .removeBanners()
@@ -39,7 +43,6 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     }
 
     @Test
-    @Tag("demoqa")
     void successRegistrationRequiredFieldsTest() {
 
         registrationPage.openPage()
@@ -64,8 +67,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     }
 
     @Test
-    @Tag("demoqa")
-    void unsuccessfulRegistrationWithoutRequiredFieldsTest() {
+    void UnsuccessfulRegistrationWithoutRequiredFieldsTest() {
 
         registrationPage.openPage()
                 .removeBanners()

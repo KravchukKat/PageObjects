@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
@@ -18,14 +17,12 @@ public class RegistrationTests {
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000; // default 4000
     }
-
     @AfterEach
-    void afterEach() {
+    void afterEach () {
         closeWebDriver();
     }
 
     @Test
-    @Tag("demoqa")
     void successfulRegistrationTest() {
         open("/automation-practice-form");
 //        registrationPage.open()
@@ -39,7 +36,7 @@ public class RegistrationTests {
         $("#userEmail").setValue("alex@egorov.com");
 //        registrationPage.setUserEmail()
         $("#genterWrapper").$(byText("Other")).click();
-//        registrationPage.setGenter()
+//        registrationPage.setGender()
         $("#userNumber").setValue("8922775126");
 //        registrationPage.setUserNumber()
         $("#dateOfBirthInput").click();
@@ -78,4 +75,3 @@ public class RegistrationTests {
 //        registrationPage.checkResultValue()
     }
 }
-

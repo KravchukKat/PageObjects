@@ -29,112 +29,98 @@ public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultModelDialogComponent resultModelDialogComponent = new ResultModelDialogComponent();
 
-    public RegistrationPage openPage() {
+    public RegistrationPage openPage(){
         open("/automation-practice-form");
 
         return this;
     }
-
-    public RegistrationPage removeBanners() {
+    public RegistrationPage removeBanners(){
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
         return this;
     }
-
-    public RegistrationPage setFirstName(String value) {
+    public RegistrationPage setFirstName(String value){
         firstNameInput.setValue(value);
 
         return this;
     }
 
-    public RegistrationPage setLastName(String value) {
+    public RegistrationPage setLastName(String value){
         lastNameInput.setValue(value);
 
         return this;
     }
-
-    public RegistrationPage setUserEmail(String value) {
+    public RegistrationPage setUserEmail(String value){
         userEmailInput.setValue(value);
 
         return this;
     }
-
     public RegistrationPage setGenter(String value) {
         genterWrapper.$(byText(value)).click();
 
         return this;
     }
-
     public RegistrationPage setUserNumber(String value) {
         userNumberInput.setValue(value);
 
         return this;
     }
-
-    public RegistrationPage setBirthDay(String day, String month, String year) {
+    public RegistrationPage setBirthDay (String day, String month, String year){
         calendarInput.click();
-        calendarComponent.setDate(day, month, year);
+        calendarComponent.setDate(day,month,year);
 
         return this;
     }
-
     public RegistrationPage setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
 
         return this;
     }
-
     public RegistrationPage setHobbies(String value) {
         hobbiesWrapper.$(byText(value)).click();
 
         return this;
     }
-
     public RegistrationPage setPicture(String img) {
         uploadPicture.uploadFromClasspath(img);
 
         return this;
     }
-
     public RegistrationPage setAddress(String value) {
         currentAddressInput.setValue(value);
 
         return this;
     }
-
-    public RegistrationPage setState(String value) {
+    public RegistrationPage setState(String value){
         stateInput.setValue(value).pressEnter();
 
         return this;
     }
-
-    public RegistrationPage setCity(String value) {
+    public RegistrationPage setCity(String value){
         cityInput.setValue(value).pressEnter();
 
         return this;
     }
-
     public RegistrationPage submit() {
         submit.click();
 
         return this;
     }
-
-    public RegistrationPage checkFormAppears() {
+    public RegistrationPage checkFormAppears(){
         modalDialog.should(appear);
         exampleModalSizesTitleLg.shouldHave(text("Thanks for submitting the form"));
 
         return this;
     }
 
-    public RegistrationPage checkFormNotAppears() {
+    public RegistrationPage checkFormNotAppears(){
         modalDialog.shouldNot(appear);
 
         return this;
     }
 
-    public RegistrationPage checkResultValue(String key, String value) {
+    public RegistrationPage checkResultValue(String key, String value){
 
         resultModelDialogComponent.checkResultValue(key, value);
 
