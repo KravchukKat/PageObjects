@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
@@ -24,6 +25,7 @@ public class RegistrationTests {
     }
 
     @Test
+    @Tag("demoqa")
     void successfulRegistrationTest() {
         open("/automation-practice-form");
 //        registrationPage.open()
